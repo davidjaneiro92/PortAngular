@@ -1,0 +1,29 @@
+1) Instale no nosso projeto utilizando o comando:
+
+npm install --save-dev prettier
+
+2) Instale os seguintes pacotes de desenvolvimento:
+
+npm install --save-dev tslint-config-prettier npm install --save-dev tslint-plugin-prettier
+
+3) intalar o angular cli/
+
+npm i -g @angular/cli
+
+4) criar um progeto novo 
+ng new (nome do projeto ) --strict
+
+
+5) criar um modolo 
+ng g m (nome do modolo) --route
+ou
+ng generate module home --route
+
+ng g component home
+
+6) instalar Bootstrap e font awesom
+
+npm i bootstrap font-awesome
+
+7) roda o projeto 
+ng serve --o 
