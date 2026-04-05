@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 24.x
 
@@ -47,7 +47,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: angular-dist
-          path: dist
+          path: .
 
       - uses: azure/login@v2
         with:
@@ -58,4 +58,4 @@ jobs:
       - uses: azure/webapps-deploy@v3
         with:
           app-name: davidsantos
-          package: dist
+          package: .
