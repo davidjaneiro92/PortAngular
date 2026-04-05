@@ -3,14 +3,10 @@
 
 name: Build and deploy Angular app to Azure Web App - davidsantos
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
 
@@ -20,22 +16,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           node-version: 24.x
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+        working-directory: portifolio
 
-      - name: Build Angular production
+      - name: Build Angular
         run: npm run build
+        working-directory: portifolio
 
-      - name: Upload dist artifact
+      - name: Upload dist
         uses: actions/upload-artifact@v4
         with:
           name: angular-dist
-          path: dist/portifolio/browser
+          path: portifolio/dist/portifolio/browser
 
 
   deploy:
@@ -47,22 +44,18 @@ jobs:
       contents: read
 
     steps:
-
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: angular-dist
           path: dist
 
-      - name: Login Azure
-        uses: azure/login@v2
+      - uses: azure/login@v2
         with:
           client-id: ${{ secrets.__clientidsecretname__ }}
           tenant-id: ${{ secrets.__tenantidsecretname__ }}
           subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
 
-      - name: Deploy Angular dist
-        uses: azure/webapps-deploy@v3
+      - uses: azure/webapps-deploy@v3
         with:
           app-name: davidsantos
           package: dist
