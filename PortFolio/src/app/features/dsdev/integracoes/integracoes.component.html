@@ -1,0 +1,47 @@
+<section class="integracoes section">
+  <div class="container">
+    <div class="integracoes__header">
+      <h1 class="section-title">Integrações</h1>
+      <p class="section-subtitle">
+        Integramos seu sistema com plataformas essenciais. Automatizamos processos e conectamos sistemas para reduzir trabalho manual e aumentar produtividade.
+      </p>
+    </div>
+
+    <div class="integracoes__grid">
+      @for (item of integracoes(); track item.title; let i = $index) {
+        <div class="integracoes__card glass-card">
+          <div class="integracoes__icon" [attr.data-index]="i">
+            <i [class]="item.icon"></i>
+          </div>
+          <h2 class="integracoes__card-title">{{ item.title }}</h2>
+          <p class="integracoes__card-desc">{{ item.description }}</p>
+
+          <div class="integracoes__benefits">
+            <h4 class="integracoes__benefits-label">Benefícios:</h4>
+            <ul class="integracoes__benefits-list">
+              @for (benefit of item.benefits; track benefit) {
+                <li class="integracoes__benefit">
+                  <i class="ri-check-line"></i>
+                  <span>{{ benefit }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="integracoes__cta">
+      <div class="integracoes__cta-card glass-card">
+        <div class="integracoes__cta-orb"></div>
+        <h3 class="integracoes__cta-title">Precisa de uma integração específica?</h3>
+        <p class="integracoes__cta-text">
+          Se sua empresa usa um sistema que não está na lista, entre em contato. Desenvolvemos integrações personalizadas para qualquer plataforma.
+        </p>
+        <a routerLink="/dsdev/contato" class="btn-accent">
+          <i class="ri-links-line"></i> Solicitar Integração
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -74,10 +74,8 @@
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 8px;
-    background: linear-gradient(135deg, #fff, #d1d5db);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
+    -webkit-text-fill-color: var(--text-primary);
 
     @media (max-width: 768px) {
       font-size: 2.5rem;

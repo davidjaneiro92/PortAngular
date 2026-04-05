@@ -14,9 +14,9 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'freelancer',
+    path: 'dsdev',
     loadChildren: () =>
-      import('./features/freelancer/freelancer.routes').then(m => m.FREELANCER_ROUTES)
+      import('./features/dsdev/dsdev.routes').then(m => m.DSDEV_ROUTES)
   },
   { path: '**', redirectTo: '' }
 ];

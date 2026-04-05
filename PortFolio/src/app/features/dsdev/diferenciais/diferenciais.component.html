@@ -1,0 +1,44 @@
+<section class="diferenciais section">
+  <div class="container">
+    <div class="diferenciais__header">
+      <h1 class="section-title">Por que escolher a DSDev?</h1>
+      <p class="section-subtitle">
+        Mais do que desenvolvimento — entregamos soluções que geram resultado real para o seu negócio.
+      </p>
+    </div>
+
+    <div class="diferenciais__grid">
+      @for (diff of diferenciais(); track diff.title; let i = $index) {
+        <div class="diferenciais__card glass-card">
+          <div class="diferenciais__card-glow" [attr.data-index]="i"></div>
+          <div class="diferenciais__icon" [attr.data-index]="i">
+            <i [class]="diff.icon"></i>
+          </div>
+          <h3 class="diferenciais__card-title">{{ diff.title }}</h3>
+          <p class="diferenciais__card-desc">{{ diff.description }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="diferenciais__promise">
+      <div class="diferenciais__promise-card glass-card">
+        <div class="diferenciais__promise-orb"></div>
+        <div class="diferenciais__promise-icon">
+          <i class="ri-shield-star-line"></i>
+        </div>
+        <h3 class="diferenciais__promise-title">Nosso compromisso com a sua empresa</h3>
+        <p class="diferenciais__promise-text">
+          Transparência em cada etapa, prazos cumpridos e comunicação direta. Trabalhamos para que a sua empresa tenha controle total sobre o projeto e os resultados.
+        </p>
+        <div class="diferenciais__promise-actions">
+          <a routerLink="/dsdev/contato" class="btn-accent">
+            <i class="ri-file-list-3-line"></i> Solicitar Orçamento
+          </a>
+          <a routerLink="/dsdev/projetos" class="btn-outline">
+            <i class="ri-folder-line"></i> Ver Projetos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
