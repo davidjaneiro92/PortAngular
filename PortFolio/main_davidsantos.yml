@@ -18,7 +18,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24.x
+          node-version: 20.x
 
       - name: Install dependencies
         run: npm install
@@ -26,6 +26,7 @@ jobs:
 
       - name: Build Angular
         run: npm run build
+        run: npm run preview
         working-directory: portifolio
 
       - name: Upload dist
@@ -47,7 +48,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: angular-dist
-          path: .
+          path: dist
 
       - uses: azure/login@v2
         with:
@@ -58,4 +59,4 @@ jobs:
       - uses: azure/webapps-deploy@v3
         with:
           app-name: davidsantos
-          package: .
+          package: dist
