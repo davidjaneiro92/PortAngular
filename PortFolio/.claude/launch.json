@@ -5,8 +5,7 @@
       "name": "portfolio",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["ng", "serve", "--port", "4202"],
-      "port": 4202,
-      "cwd": "C:\Users\David\Desktop\DavidProjetos\PortAngular\PortFolio"
+      "port": 4202
     }
   ]
 }
