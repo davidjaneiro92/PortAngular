@@ -26,7 +26,6 @@ jobs:
 
       - name: Build Angular
         run: npm run build
-        run: npm run preview
         working-directory: portifolio
 
       - name: Upload dist
