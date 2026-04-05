@@ -3,6 +3,9 @@
 
 name: Build and deploy Angular app to Azure Web App - davidsantos
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches:
@@ -14,19 +17,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 24.x
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Angular production
         run: npm run build
@@ -54,7 +54,7 @@ jobs:
           name: angular-dist
           path: dist
 
-      - name: Azure login
+      - name: Login Azure
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.__clientidsecretname__ }}
