@@ -1,0 +1,36 @@
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__brand">
+      <span class="footer__logo">
+        <img
+          [src]="themeService.isDark() ? 'assets/images/logo-light.png' : 'assets/images/logo-dark.png'"
+          alt="DS Logo"
+          class="footer__logo-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+        <span class="footer__logo-text" style="display: none;">
+          <span class="bracket">&lt;</span>DS<span class="slash"> /</span><span class="bracket">&gt;</span>
+        </span>
+      </span>
+      <p class="footer__tagline">Engenharia de software com qualidade e prop&oacute;sito.</p>
+    </div>
+
+    <div class="footer__links">
+      <a href="mailto:davidjaneiro92@gmail.com" class="footer__link">
+        <i class="ri-mail-line"></i>
+        <span>Email</span>
+      </a>
+      <a href="https://www.linkedin.com/in/david-santos-de-santana-59a120199" target="_blank" rel="noopener noreferrer" class="footer__link">
+        <i class="ri-linkedin-box-line"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a routerLink="/freelancer" class="footer__link footer__link--freelancer">
+        <i class="ri-rocket-line"></i>
+        <span>&Aacute;rea Freelancer</span>
+      </a>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {{ currentYear() }} David Santos. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>

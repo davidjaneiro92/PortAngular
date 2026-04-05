@@ -1,0 +1,328 @@
+<!-- ==================== HERO ==================== -->
+<section class="pro-hero" id="home">
+  <div class="pro-hero__bg-effects">
+    <div class="pro-hero__orb pro-hero__orb--1"></div>
+    <div class="pro-hero__orb pro-hero__orb--2"></div>
+    <div class="pro-hero__grid-pattern"></div>
+  </div>
+
+  <div class="container pro-hero__content">
+    <div class="pro-hero__intro">
+      <span class="pro-hero__greeting">Olá, eu sou</span>
+      <h1 class="pro-hero__name">{{ profile().name }}</h1>
+      <h2 class="pro-hero__title">{{ profile().title }}</h2>
+
+      <div class="pro-hero__stack">
+        <span class="pro-hero__stack-item">C# .NET</span>
+        <span class="pro-hero__stack-divider">|</span>
+        <span class="pro-hero__stack-item">Angular</span>
+        <span class="pro-hero__stack-divider">|</span>
+        <span class="pro-hero__stack-item">Flutter</span>
+      </div>
+
+      <p class="pro-hero__summary">{{ profile().summary }}</p>
+
+      <div class="pro-hero__actions">
+        <a href="#projetos" class="btn-primary">
+          <i class="ri-folder-line"></i>
+          Ver Projetos
+        </a>
+        <a href="#contato" class="btn-outline">
+          <i class="ri-mail-send-line"></i>
+          Contato
+        </a>
+      </div>
+    </div>
+
+    <div class="pro-hero__visual">
+      <div class="pro-hero__code-block glass-card">
+        <div class="pro-hero__code-header">
+          <span class="pro-hero__code-dot pro-hero__code-dot--red"></span>
+          <span class="pro-hero__code-dot pro-hero__code-dot--yellow"></span>
+          <span class="pro-hero__code-dot pro-hero__code-dot--green"></span>
+          <span class="pro-hero__code-file">developer.ts</span>
+        </div>
+        <pre class="pro-hero__code-body"><code><span class="keyword">const</span> <span class="variable">developer</span> = {{ '{' }}
+  <span class="property">name</span>: <span class="string">"David Santos"</span>,
+  <span class="property">role</span>: <span class="string">"Full Stack Pleno"</span>,
+  <span class="property">stack</span>: [<span class="string">"C#"</span>, <span class="string">"Angular"</span>, <span class="string">"Flutter"</span>],
+  <span class="property">architecture</span>: [<span class="string">"SOLID"</span>, <span class="string">"DDD"</span>, <span class="string">"Clean"</span>],
+  <span class="property">experience</span>: <span class="string">"+5 anos"</span>,
+  <span class="property">passion</span>: <span class="string">"Código limpo"</span>
+{{ '}' }};</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="pro-hero__scroll-indicator">
+    <span>Scroll</span>
+    <i class="ri-arrow-down-line"></i>
+  </div>
+</section>
+
+<!-- ==================== FREELANCER BANNER ==================== -->
+<div class="pro-banner">
+  <div class="container pro-banner__content">
+    <span class="pro-banner__text">
+      <i class="ri-service-line"></i>
+      Procura serviços de desenvolvimento?
+    </span>
+    <a routerLink="/freelancer" class="pro-banner__link">
+      Conheça meu trabalho freelancer
+      <i class="ri-arrow-right-line"></i>
+    </a>
+  </div>
+</div>
+
+<!-- ==================== SOBRE ==================== -->
+<section class="section pro-sobre" id="sobre">
+  <div class="container">
+    <h2 class="section-title">Sobre Mim</h2>
+    <p class="section-subtitle">Quem sou eu e o que me motiva</p>
+
+    <div class="pro-sobre__grid">
+      <div class="pro-sobre__text-area">
+        <p class="pro-sobre__about">{{ profile().about }}</p>
+
+        <div class="pro-sobre__highlights">
+          <div class="pro-sobre__highlight glass-card">
+            <i class="ri-building-line"></i>
+            <h4>Clean Architecture</h4>
+            <p>Código organizado em camadas com separação clara de responsabilidades</p>
+          </div>
+          <div class="pro-sobre__highlight glass-card">
+            <i class="ri-speed-line"></i>
+            <h4>Performance</h4>
+            <p>APIs otimizadas com Dapper, SQLKata e consultas performáticas</p>
+          </div>
+          <div class="pro-sobre__highlight glass-card">
+            <i class="ri-shield-check-line"></i>
+            <h4>Boas Práticas</h4>
+            <p>SOLID, Design Patterns e documentação técnica em cada projeto</p>
+          </div>
+          <div class="pro-sobre__highlight glass-card">
+            <i class="ri-git-merge-line"></i>
+            <h4>Escalabilidade</h4>
+            <p>Microsserviços, Kafka e arquiteturas distribuídas para crescer sem limites</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pro-sobre__info-card glass-card">
+        <div class="pro-sobre__stat">
+          <span class="pro-sobre__stat-number">+5</span>
+          <span class="pro-sobre__stat-label">Anos de Experiência</span>
+        </div>
+        <div class="pro-sobre__stat">
+          <span class="pro-sobre__stat-number">4</span>
+          <span class="pro-sobre__stat-label">Empresas</span>
+        </div>
+        <div class="pro-sobre__stat">
+          <span class="pro-sobre__stat-number">3</span>
+          <span class="pro-sobre__stat-label">Stacks Principais</span>
+        </div>
+
+        <div class="pro-sobre__info-divider"></div>
+
+        <div class="pro-sobre__detail">
+          <i class="ri-map-pin-line"></i>
+          <span>{{ profile().location }}</span>
+        </div>
+        <div class="pro-sobre__detail">
+          <i class="ri-graduation-cap-line"></i>
+          <span>{{ profile().education }}</span>
+        </div>
+        <div class="pro-sobre__detail">
+          <i class="ri-code-s-slash-line"></i>
+          <span>Full Stack Pleno</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HABILIDADES ==================== -->
+<section class="section pro-habilidades" id="habilidades">
+  <div class="container">
+    <h2 class="section-title">Habilidades</h2>
+    <p class="section-subtitle">Tecnologias e competências técnicas</p>
+
+    <div class="pro-habilidades__grid">
+      @for (category of skills(); track category.category) {
+        <div class="pro-habilidades__category glass-card">
+          <div class="pro-habilidades__category-header">
+            <i [class]="category.icon"></i>
+            <h3>{{ category.category }}</h3>
+          </div>
+
+          <div class="pro-habilidades__items">
+            @for (skill of category.items; track skill.name) {
+              <div class="pro-habilidades__item">
+                <div class="pro-habilidades__item-info">
+                  <span class="pro-habilidades__item-name">{{ skill.name }}</span>
+                  <span class="pro-habilidades__item-level">{{ skill.level }}%</span>
+                </div>
+                <div class="pro-habilidades__bar">
+                  <div
+                    class="pro-habilidades__bar-fill"
+                    [style.width.%]="skill.level"
+                  ></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==================== EXPERIÊNCIA ==================== -->
+<section class="section pro-experiencia" id="experiencia">
+  <div class="container">
+    <h2 class="section-title">Experiência</h2>
+    <p class="section-subtitle">Trajetória profissional</p>
+
+    <div class="pro-experiencia__timeline">
+      @for (exp of experiences(); track exp.company; let i = $index) {
+        <div class="pro-experiencia__item" [class.pro-experiencia__item--right]="i % 2 !== 0">
+          <div class="pro-experiencia__dot">
+            <div class="pro-experiencia__dot-inner"></div>
+          </div>
+
+          <div class="pro-experiencia__card glass-card">
+            <div class="pro-experiencia__header">
+              <h3 class="pro-experiencia__company">{{ exp.company }}</h3>
+              <span class="pro-experiencia__period">{{ exp.period }}</span>
+            </div>
+
+            <span class="pro-experiencia__role">{{ exp.role }}</span>
+            <span class="pro-experiencia__location">
+              <i class="ri-map-pin-line"></i>
+              {{ exp.location }}
+            </span>
+
+            <p class="pro-experiencia__description">{{ exp.description }}</p>
+
+            <div class="pro-experiencia__stack">
+              @for (tech of exp.stack; track tech) {
+                <span class="tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+      <div class="pro-experiencia__line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJETOS ==================== -->
+<section class="section pro-projetos" id="projetos">
+  <div class="container">
+    <h2 class="section-title">Projetos</h2>
+    <p class="section-subtitle">Principais projetos e entregas</p>
+
+    <div class="pro-projetos__grid">
+      @for (project of projects(); track project.title) {
+        <div class="pro-projetos__card glass-card">
+          <div class="pro-projetos__card-icon">
+            <i class="ri-folder-3-line"></i>
+          </div>
+
+          <h3 class="pro-projetos__card-title">{{ project.title }}</h3>
+          <p class="pro-projetos__card-description">{{ project.description }}</p>
+
+          <div class="pro-projetos__card-highlights">
+            @for (highlight of project.highlights; track highlight) {
+              <span class="pro-projetos__highlight">
+                <i class="ri-check-line"></i>
+                {{ highlight }}
+              </span>
+            }
+          </div>
+
+          <div class="pro-projetos__card-stack">
+            @for (tech of project.stack; track tech) {
+              <span class="tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTATO ==================== -->
+<section class="section pro-contato" id="contato">
+  <div class="container">
+    <h2 class="section-title">Contato</h2>
+    <p class="section-subtitle">Vamos conversar sobre o próximo projeto</p>
+
+    <div class="pro-contato__grid">
+      <div class="pro-contato__channels">
+        <a [href]="'mailto:' + contact().email" class="pro-contato__channel glass-card">
+          <div class="pro-contato__channel-icon">
+            <i class="ri-mail-line"></i>
+          </div>
+          <div class="pro-contato__channel-info">
+            <h4>E-mail</h4>
+            <span>{{ contact().email }}</span>
+          </div>
+          <i class="ri-external-link-line pro-contato__channel-arrow"></i>
+        </a>
+
+        <a [href]="contact().linkedin" target="_blank" rel="noopener noreferrer" class="pro-contato__channel glass-card">
+          <div class="pro-contato__channel-icon">
+            <i class="ri-linkedin-box-line"></i>
+          </div>
+          <div class="pro-contato__channel-info">
+            <h4>LinkedIn</h4>
+            <span>David Santos De Santana</span>
+          </div>
+          <i class="ri-external-link-line pro-contato__channel-arrow"></i>
+        </a>
+
+        <div class="pro-contato__channel glass-card pro-contato__channel--copy" (click)="copyEmail()">
+          <div class="pro-contato__channel-icon">
+            <i [class]="copied ? 'ri-check-line' : 'ri-file-copy-line'"></i>
+          </div>
+          <div class="pro-contato__channel-info">
+            <h4>{{ copied ? 'Copiado!' : 'Copiar E-mail' }}</h4>
+            <span>{{ contact().email }}</span>
+          </div>
+        </div>
+
+        <div class="pro-contato__channel glass-card">
+          <div class="pro-contato__channel-icon">
+            <i class="ri-map-pin-line"></i>
+          </div>
+          <div class="pro-contato__channel-info">
+            <h4>Localização</h4>
+            <span>{{ contact().location }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pro-contato__cta glass-card">
+        <div class="pro-contato__cta-icon">
+          <i class="ri-rocket-line"></i>
+        </div>
+        <h3 class="pro-contato__cta-title">Pronto para colaborar?</h3>
+        <p class="pro-contato__cta-text">
+          Estou aberto a novas oportunidades e desafios. Se você busca um desenvolvedor
+          Full Stack comprometido com qualidade e entrega, vamos conversar.
+        </p>
+        <a [href]="'mailto:' + contact().email" class="btn-primary">
+          <i class="ri-mail-send-line"></i>
+          Enviar E-mail
+        </a>
+        <a [href]="contact().linkedin" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <i class="ri-linkedin-box-line"></i>
+          Conectar no LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

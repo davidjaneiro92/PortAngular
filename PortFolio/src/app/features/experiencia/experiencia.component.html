@@ -1,0 +1,39 @@
+<section class="section experiencia">
+  <div class="container">
+    <h2 class="section-title">Experiência</h2>
+    <p class="section-subtitle">Trajetória profissional</p>
+
+    <div class="experiencia__timeline">
+      @for (exp of experiences(); track exp.company; let i = $index) {
+        <div class="experiencia__item" [class.experiencia__item--right]="i % 2 !== 0">
+          <div class="experiencia__dot">
+            <div class="experiencia__dot-inner"></div>
+          </div>
+
+          <div class="experiencia__card glass-card">
+            <div class="experiencia__header">
+              <h3 class="experiencia__company">{{ exp.company }}</h3>
+              <span class="experiencia__period">{{ exp.period }}</span>
+            </div>
+
+            <span class="experiencia__role">{{ exp.role }}</span>
+            <span class="experiencia__location">
+              <i class="ri-map-pin-line"></i>
+              {{ exp.location }}
+            </span>
+
+            <p class="experiencia__description">{{ exp.description }}</p>
+
+            <div class="experiencia__stack">
+              @for (tech of exp.stack; track tech) {
+                <span class="tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+      <div class="experiencia__line"></div>
+    </div>
+  </div>
+</section>

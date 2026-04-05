@@ -1,0 +1,96 @@
+<section class="contato section">
+  <div class="container">
+    <div class="contato__header">
+      <h1 class="section-title">Vamos Conversar?</h1>
+      <p class="section-subtitle">
+        Tem um projeto em mente? Precisa de um desenvolvedor Full Stack confiável? Entre em contato e vamos transformar sua ideia em realidade.
+      </p>
+    </div>
+
+    <div class="contato__content">
+      <div class="contato__cta-card glass-card">
+        <div class="contato__cta-orb"></div>
+        <div class="contato__cta-icon">
+          <i class="ri-rocket-2-line"></i>
+        </div>
+        <h2 class="contato__cta-title">Pronto para começar?</h2>
+        <p class="contato__cta-text">
+          Do planejamento à entrega final — ofereço desenvolvimento completo com qualidade profissional,
+          comunicação transparente e compromisso com prazos.
+        </p>
+      </div>
+
+      <div class="contato__channels">
+        <div class="contato__channel glass-card">
+          <div class="contato__channel-icon contato__channel-icon--email">
+            <i class="ri-mail-line"></i>
+          </div>
+          <div class="contato__channel-info">
+            <h3 class="contato__channel-label">E-mail</h3>
+            <p class="contato__channel-value">{{ contact().email }}</p>
+          </div>
+          <div class="contato__channel-actions">
+            <a href="mailto:{{ contact().email }}" class="contato__channel-btn btn-primary">
+              <i class="ri-send-plane-line"></i> Enviar E-mail
+            </a>
+            <button class="contato__copy-btn" (click)="copyEmail()">
+              <i [class]="copied() ? 'ri-check-line' : 'ri-file-copy-line'"></i>
+              {{ copied() ? 'Copiado!' : 'Copiar' }}
+            </button>
+          </div>
+        </div>
+
+        <div class="contato__channel glass-card">
+          <div class="contato__channel-icon contato__channel-icon--linkedin">
+            <i class="ri-linkedin-fill"></i>
+          </div>
+          <div class="contato__channel-info">
+            <h3 class="contato__channel-label">LinkedIn</h3>
+            <p class="contato__channel-value">David Santos de Santana</p>
+          </div>
+          <div class="contato__channel-actions">
+            <a [href]="contact().linkedin" target="_blank" rel="noopener" class="contato__channel-btn btn-primary">
+              <i class="ri-external-link-line"></i> Abrir Perfil
+            </a>
+          </div>
+        </div>
+
+        <div class="contato__channel glass-card">
+          <div class="contato__channel-icon contato__channel-icon--location">
+            <i class="ri-map-pin-line"></i>
+          </div>
+          <div class="contato__channel-info">
+            <h3 class="contato__channel-label">Localização</h3>
+            <p class="contato__channel-value">{{ contact().location }}</p>
+          </div>
+          <div class="contato__channel-actions">
+            <span class="contato__channel-note">
+              <i class="ri-global-line"></i> Atendimento remoto para todo o Brasil
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato__bottom">
+      <div class="contato__bottom-card glass-card">
+        <div class="contato__bottom-orb"></div>
+        <h3 class="contato__bottom-title">
+          <i class="ri-lightbulb-flash-line"></i>
+          Cada grande projeto começa com uma conversa
+        </h3>
+        <p class="contato__bottom-text">
+          Não importa o tamanho do projeto — estou aqui para ajudar. Respondo em até 24 horas.
+        </p>
+        <div class="contato__bottom-actions">
+          <a href="mailto:{{ contact().email }}" class="btn-accent">
+            <i class="ri-mail-send-line"></i> Enviar Mensagem
+          </a>
+          <a routerLink="/freelancer/servicos" class="btn-outline">
+            <i class="ri-service-line"></i> Ver Serviços
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

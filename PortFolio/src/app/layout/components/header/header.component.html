@@ -1,0 +1,44 @@
+<header class="header" [class.scrolled]="isScrolled()">
+  <div class="header__container">
+    <a class="header__logo" (click)="scrollToSection('home')" style="cursor: pointer;">
+      <img
+        [src]="themeService.isDark() ? 'assets/images/logo-light.png' : 'assets/images/logo-dark.png'"
+        alt="DS Logo"
+        class="header__logo-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <span class="header__logo-text" style="display: none;">
+        <span class="header__logo-bracket">&lt;</span>
+        <span class="header__logo-name">DS</span>
+        <span class="header__logo-slash"> /</span>
+        <span class="header__logo-bracket">&gt;</span>
+      </span>
+    </a>
+
+    <nav class="header__nav" [class.active]="isMobileMenuOpen()">
+      @for (item of navItems(); track item.fragment) {
+        <a
+          class="header__nav-link"
+          [class.active]="activeSection() === item.fragment"
+          (click)="scrollToSection(item.fragment)">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+
+      <a routerLink="/freelancer" class="header__nav-link header__nav-link--freelancer">
+        <i class="ri-rocket-line"></i>
+        <span>Freelancer</span>
+      </a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="header__theme-btn" (click)="themeService.toggle()">
+        <i [class]="themeService.isDark() ? 'ri-sun-line' : 'ri-moon-line'"></i>
+      </button>
+
+      <button class="header__menu-btn" (click)="toggleMobileMenu()">
+        <i [class]="isMobileMenuOpen() ? 'ri-close-line' : 'ri-menu-3-line'"></i>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,299 @@
+.contato {
+  &__header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 60px;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // ========== CTA CARD ==========
+  &__cta-card {
+    position: relative;
+    padding: 48px 36px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(6, 182, 212, 0.08));
+    border-color: rgba(99, 102, 241, 0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 480px) {
+      padding: 36px 24px;
+    }
+  }
+
+  &__cta-orb {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.12;
+    top: -80px;
+    right: -60px;
+    pointer-events: none;
+  }
+
+  &__cta-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 20px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+
+    i {
+      font-size: 2rem;
+      color: #fff;
+    }
+  }
+
+  &__cta-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__cta-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  // ========== CHANNELS ==========
+  &__channels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__channel {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    transition: var(--transition);
+    flex-wrap: wrap;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(99, 102, 241, 0.1);
+
+      .contato__channel-icon {
+        transform: scale(1.1);
+      }
+    }
+
+    @media (max-width: 580px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+  }
+
+  &__channel-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: var(--transition);
+
+    i {
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    &--email {
+      background: linear-gradient(135deg, var(--primary), #818cf8);
+    }
+
+    &--linkedin {
+      background: linear-gradient(135deg, #0077b5, #00a0dc);
+    }
+
+    &--location {
+      background: linear-gradient(135deg, var(--accent), #22d3ee);
+    }
+  }
+
+  &__channel-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__channel-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  &__channel-value {
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  &__channel-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+
+    @media (max-width: 580px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__channel-btn {
+    padding: 10px 20px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  &__copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(6, 182, 212, 0.08);
+    }
+  }
+
+  &__channel-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 500;
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  // ========== BOTTOM CTA ==========
+  &__bottom {
+    text-align: center;
+  }
+
+  &__bottom-card {
+    position: relative;
+    padding: 56px 40px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.06), rgba(99, 102, 241, 0.06));
+    border-color: rgba(6, 182, 212, 0.18);
+
+    @media (max-width: 768px) {
+      padding: 40px 24px;
+    }
+  }
+
+  &__bottom-orb {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.1;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  &__bottom-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+
+    i {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.15rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__bottom-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bottom-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<section class="projetos section">
+  <div class="container">
+    <div class="projetos__header">
+      <h1 class="section-title">Projetos Realizados</h1>
+      <p class="section-subtitle">
+        Cada projeto representa um desafio superado e valor real entregue — conheça algumas das soluções que desenvolvi.
+      </p>
+    </div>
+
+    <div class="projetos__grid">
+      @for (project of projects(); track project.title; let i = $index) {
+        <div class="projetos__card glass-card">
+          <div class="projetos__card-accent" [attr.data-index]="i"></div>
+
+          <div class="projetos__card-content">
+            <div class="projetos__card-number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+            <h2 class="projetos__card-title">{{ project.title }}</h2>
+            <p class="projetos__card-desc">{{ project.description }}</p>
+
+            <div class="projetos__highlights">
+              <h4 class="projetos__highlights-label">Destaques</h4>
+              <div class="projetos__highlights-list">
+                @for (highlight of project.highlights; track highlight) {
+                  <span class="projetos__highlight">
+                    <i class="ri-check-double-line"></i>
+                    {{ highlight }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <div class="projetos__stack">
+              @for (tech of project.stack; track tech) {
+                <span class="tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="projetos__cta">
+      <div class="projetos__cta-card glass-card">
+        <div class="projetos__cta-orb"></div>
+        <h3 class="projetos__cta-title">Quer ver sua ideia aqui?</h3>
+        <p class="projetos__cta-text">
+          Seu projeto pode ser o próximo case de sucesso. Vamos construir algo incrível juntos.
+        </p>
+        <a routerLink="/freelancer/contato" class="btn-accent">
+          <i class="ri-rocket-line"></i> Iniciar Projeto
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

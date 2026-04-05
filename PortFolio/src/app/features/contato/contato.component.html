@@ -1,0 +1,62 @@
+<section class="section contato">
+  <div class="container">
+    <h2 class="section-title">Contato</h2>
+    <p class="section-subtitle">Vamos construir algo incrível juntos</p>
+
+    <div class="contato__grid">
+      <div class="contato__info">
+        <p class="contato__text">
+          Estou aberto a novos desafios que valorizem a qualidade técnica,
+          inovação e aprendizado contínuo. Se você procura um desenvolvedor
+          com foco em engenharia de software, vamos conversar.
+        </p>
+
+        <div class="contato__channels">
+          <a href="mailto:{{ contact().email }}" class="contato__channel glass-card">
+            <div class="contato__channel-icon">
+              <i class="ri-mail-line"></i>
+            </div>
+            <div class="contato__channel-info">
+              <strong>Email</strong>
+              <span>{{ contact().email }}</span>
+            </div>
+            <i class="ri-arrow-right-up-line"></i>
+          </a>
+
+          <a [href]="contact().linkedin" target="_blank" rel="noopener noreferrer" class="contato__channel glass-card">
+            <div class="contato__channel-icon">
+              <i class="ri-linkedin-box-line"></i>
+            </div>
+            <div class="contato__channel-info">
+              <strong>LinkedIn</strong>
+              <span>David Santos De Santana</span>
+            </div>
+            <i class="ri-arrow-right-up-line"></i>
+          </a>
+
+          <div class="contato__channel glass-card" (click)="copyEmail()" style="cursor: pointer;">
+            <div class="contato__channel-icon">
+              <i [class]="copied() ? 'ri-check-line' : 'ri-file-copy-line'"></i>
+            </div>
+            <div class="contato__channel-info">
+              <strong>{{ copied() ? 'Copiado!' : 'Copiar Email' }}</strong>
+              <span>Clique para copiar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contato__cta">
+        <div class="contato__cta-card glass-card">
+          <i class="ri-rocket-line contato__cta-icon"></i>
+          <h3>Pronto para o próximo projeto?</h3>
+          <p>Engenharia de software com SOLID, Clean Architecture e foco em escalabilidade real.</p>
+          <a href="mailto:{{ contact().email }}" class="btn-primary">
+            <i class="ri-send-plane-line"></i>
+            Enviar Mensagem
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

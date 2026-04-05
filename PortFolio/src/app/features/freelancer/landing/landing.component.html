@@ -1,0 +1,107 @@
+<section class="hero">
+  <div class="hero__orbs">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+  </div>
+
+  <div class="hero__container container">
+    <div class="hero__badge">
+      <i class="ri-rocket-line"></i>
+      Disponível para novos projetos
+    </div>
+
+    <h1 class="hero__title">
+      Transformo suas ideias em
+      <span class="hero__title-highlight">software de alta qualidade</span>
+    </h1>
+
+    <p class="hero__subtitle">
+      Desenvolvimento Full Stack completo — do back-end robusto com C# .NET ao front-end moderno com Angular
+      e apps mobile com Flutter. Soluções sob medida para o seu negócio.
+    </p>
+
+    <div class="hero__actions">
+      <a routerLink="/freelancer/servicos" class="btn-accent">
+        <i class="ri-service-line"></i> Ver Serviços
+      </a>
+      <a routerLink="/freelancer/contato" class="btn-outline">
+        <i class="ri-chat-3-line"></i> Falar Comigo
+      </a>
+    </div>
+
+    <div class="hero__tech-badges">
+      <span class="hero__tech-badge">C# .NET</span>
+      <span class="hero__tech-badge">Angular</span>
+      <span class="hero__tech-badge">Flutter</span>
+      <span class="hero__tech-badge">Docker</span>
+      <span class="hero__tech-badge">Kafka</span>
+    </div>
+  </div>
+</section>
+
+<section class="services-preview section">
+  <div class="container">
+    <h2 class="section-title">O que eu faço</h2>
+    <p class="section-subtitle">Soluções completas para cada camada do seu projeto</p>
+
+    <div class="services-preview__grid">
+      @for (service of services(); track service.title) {
+        <div class="services-preview__card glass-card">
+          <div class="services-preview__icon">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3 class="services-preview__card-title">{{ service.title }}</h3>
+          <p class="services-preview__card-desc">{{ service.description }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="services-preview__cta">
+      <a routerLink="/freelancer/servicos" class="btn-primary">
+        Conhecer todos os serviços <i class="ri-arrow-right-line"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="stats section">
+  <div class="container">
+    <div class="stats__bar glass-card">
+      <div class="stats__item">
+        <span class="stats__number">+5</span>
+        <span class="stats__label">anos de experiência</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">4+</span>
+        <span class="stats__label">empresas atendidas</span>
+      </div>
+      <div class="stats__divider"></div>
+      <div class="stats__item">
+        <span class="stats__number">3</span>
+        <span class="stats__label">stacks dominadas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section section">
+  <div class="container">
+    <div class="cta-section__card glass-card">
+      <div class="cta-section__orb"></div>
+      <h2 class="cta-section__title">Pronto para seu próximo projeto?</h2>
+      <p class="cta-section__text">
+        Vamos conversar sobre como posso ajudar a transformar sua ideia em um software robusto, escalável e de alta performance.
+      </p>
+      <div class="cta-section__actions">
+        <a routerLink="/freelancer/contato" class="btn-accent">
+          <i class="ri-mail-send-line"></i> Entrar em Contato
+        </a>
+        <a routerLink="/freelancer/diferenciais" class="btn-outline">
+          <i class="ri-star-line"></i> Ver Diferenciais
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
