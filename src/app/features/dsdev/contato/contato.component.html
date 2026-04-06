@@ -1,0 +1,135 @@
+<section class="contato section">
+  <div class="container">
+    <div class="contato__header">
+      <h1 class="section-title">Pronto para transformar seu negócio?</h1>
+      <p class="section-subtitle">
+        Solicite um orçamento sem compromisso. Respondemos em até 24 horas.
+      </p>
+    </div>
+
+    <div class="contato__content">
+      <!-- WHATSAPP CTA -->
+      <div class="contato__cta-card glass-card">
+        <div class="contato__cta-orb"></div>
+        <div class="contato__cta-icon">
+          <i class="ri-whatsapp-line"></i>
+        </div>
+        <h2 class="contato__cta-title">Fale direto pelo WhatsApp</h2>
+        <p class="contato__cta-text">
+          A forma mais rápida de começar. Clique abaixo e fale com nossa equipe agora mesmo.
+        </p>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn-whatsapp">
+          <i class="ri-whatsapp-fill"></i> Falar no WhatsApp
+        </a>
+        <p class="contato__urgency">
+          <i class="ri-time-line"></i> Resposta em até 24 horas
+        </p>
+      </div>
+
+      <!-- FORM -->
+      <div class="contato__form-card glass-card">
+        <h3 class="contato__form-title">
+          <i class="ri-file-list-3-line"></i>
+          Solicitar Orçamento
+        </h3>
+
+        @if (!submitted()) {
+          <form class="contato__form" (ngSubmit)="submitForm()">
+            <div class="contato__field">
+              <label class="contato__label">Serviço de interesse</label>
+              <select
+                class="contato__select"
+                [ngModel]="selectedService()"
+                (ngModelChange)="selectedService.set($event)"
+                name="service"
+              >
+                <option value="">Selecione um serviço</option>
+                @for (service of services(); track service) {
+                  <option [value]="service">{{ service }}</option>
+                }
+              </select>
+            </div>
+
+            <div class="contato__field">
+              <label class="contato__label">Seu e-mail</label>
+              <input
+                type="email"
+                class="contato__input"
+                placeholder="empresa@exemplo.com.br"
+                [ngModel]="email()"
+                (ngModelChange)="email.set($event)"
+                name="email"
+              />
+            </div>
+
+            <div class="contato__field">
+              <label class="contato__label">Conte sobre sua necessidade</label>
+              <textarea
+                class="contato__textarea"
+                placeholder="Descreva brevemente o que sua empresa precisa..."
+                rows="5"
+                [ngModel]="message()"
+                (ngModelChange)="message.set($event)"
+                name="message"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-accent contato__submit">
+              <i class="ri-send-plane-line"></i> Enviar via WhatsApp
+            </button>
+          </form>
+        } @else {
+          <div class="contato__success">
+            <div class="contato__success-icon">
+              <i class="ri-check-double-line"></i>
+            </div>
+            <h4>Mensagem enviada!</h4>
+            <p>Aguarde o retorno em até 24 horas.</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- CHANNELS -->
+    <div class="contato__channels">
+      <div class="contato__channel glass-card">
+        <div class="contato__channel-icon contato__channel-icon--email">
+          <i class="ri-mail-line"></i>
+        </div>
+        <div class="contato__channel-info">
+          <h3 class="contato__channel-label">E-mail</h3>
+          <p class="contato__channel-value">davidjaneiro92&#64;gmail.com</p>
+        </div>
+        <a href="mailto:davidjaneiro92@gmail.com" class="contato__channel-btn btn-primary">
+          <i class="ri-send-plane-line"></i> Enviar E-mail
+        </a>
+      </div>
+
+      <div class="contato__channel glass-card">
+        <div class="contato__channel-icon contato__channel-icon--whatsapp">
+          <i class="ri-whatsapp-fill"></i>
+        </div>
+        <div class="contato__channel-info">
+          <h3 class="contato__channel-label">WhatsApp</h3>
+          <p class="contato__channel-value">Atendimento direto</p>
+        </div>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="contato__channel-btn btn-primary">
+          <i class="ri-external-link-line"></i> Abrir Chat
+        </a>
+      </div>
+
+      <div class="contato__channel glass-card">
+        <div class="contato__channel-icon contato__channel-icon--location">
+          <i class="ri-map-pin-line"></i>
+        </div>
+        <div class="contato__channel-info">
+          <h3 class="contato__channel-label">Atendimento</h3>
+          <p class="contato__channel-value">Remoto para todo o Brasil</p>
+        </div>
+        <span class="contato__channel-note">
+          <i class="ri-global-line"></i> 100% online
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

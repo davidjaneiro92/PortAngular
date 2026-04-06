@@ -1,0 +1,37 @@
+<section class="section projetos">
+  <div class="container">
+    <h2 class="section-title">Projetos</h2>
+    <p class="section-subtitle">Soluções desenvolvidas com engenharia e qualidade</p>
+
+    <div class="projetos__grid">
+      @for (project of projects(); track project.title) {
+        <div class="projetos__card glass-card">
+          <div class="projetos__card-header">
+            <i class="ri-folder-3-line projetos__icon"></i>
+            <div class="projetos__card-actions">
+              <i class="ri-code-s-slash-line"></i>
+            </div>
+          </div>
+
+          <h3 class="projetos__title">{{ project.title }}</h3>
+          <p class="projetos__description">{{ project.description }}</p>
+
+          <div class="projetos__highlights">
+            @for (highlight of project.highlights; track highlight) {
+              <span class="projetos__highlight">
+                <i class="ri-check-line"></i>
+                {{ highlight }}
+              </span>
+            }
+          </div>
+
+          <div class="projetos__stack">
+            @for (tech of project.stack; track tech) {
+              <span class="tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

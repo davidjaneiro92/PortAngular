@@ -1,0 +1,34 @@
+<section class="section habilidades">
+  <div class="container">
+    <h2 class="section-title">Habilidades</h2>
+    <p class="section-subtitle">Stack técnica e nível de proficiência</p>
+
+    <div class="habilidades__grid">
+      @for (category of skills(); track category.category) {
+        <div class="habilidades__category glass-card">
+          <div class="habilidades__category-header">
+            <i [class]="category.icon"></i>
+            <h3>{{ category.category }}</h3>
+          </div>
+
+          <div class="habilidades__items">
+            @for (skill of category.items; track skill.name) {
+              <div class="habilidades__item">
+                <div class="habilidades__item-info">
+                  <span class="habilidades__item-name">{{ skill.name }}</span>
+                  <span class="habilidades__item-level">{{ skill.level }}%</span>
+                </div>
+                <div class="habilidades__bar">
+                  <div
+                    class="habilidades__bar-fill"
+                    [style.width.%]="skill.level">
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

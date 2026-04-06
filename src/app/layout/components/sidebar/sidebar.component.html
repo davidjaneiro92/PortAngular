@@ -1,0 +1,15 @@
+<aside class="sidebar">
+  <div class="sidebar__social">
+    @for (link of socialLinks(); track link.label) {
+      <a
+        [href]="link.url"
+        [attr.aria-label]="link.label"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sidebar__link">
+        <i [class]="link.icon"></i>
+      </a>
+    }
+  </div>
+  <div class="sidebar__line"></div>
+</aside>

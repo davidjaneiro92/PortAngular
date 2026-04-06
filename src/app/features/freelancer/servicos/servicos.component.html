@@ -1,0 +1,50 @@
+<section class="servicos section">
+  <div class="container">
+    <div class="servicos__header">
+      <h1 class="section-title">Serviços</h1>
+      <p class="section-subtitle">
+        Soluções completas de desenvolvimento para cada camada do seu projeto — com qualidade profissional e foco em resultado.
+      </p>
+    </div>
+
+    <div class="servicos__grid">
+      @for (service of services(); track service.title; let i = $index) {
+        <div class="servicos__card glass-card">
+          <div class="servicos__card-header">
+            <div class="servicos__icon" [attr.data-index]="i">
+              <i [class]="service.icon"></i>
+            </div>
+            <h2 class="servicos__card-title">{{ service.title }}</h2>
+          </div>
+
+          <p class="servicos__card-desc">{{ service.description }}</p>
+
+          <div class="servicos__features">
+            <h4 class="servicos__features-label">O que inclui:</h4>
+            <ul class="servicos__features-list">
+              @for (feature of service.features; track feature) {
+                <li class="servicos__feature">
+                  <i class="ri-check-line"></i>
+                  <span>{{ feature }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="servicos__cta">
+      <div class="servicos__cta-card glass-card">
+        <div class="servicos__cta-orb"></div>
+        <h3 class="servicos__cta-title">Precisa de um serviço personalizado?</h3>
+        <p class="servicos__cta-text">
+          Cada projeto é único. Entre em contato para discutirmos a melhor solução para o seu caso.
+        </p>
+        <a routerLink="/freelancer/contato" class="btn-accent">
+          <i class="ri-mail-send-line"></i> Solicitar Orçamento
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+<section class="section sobre">
+  <div class="container">
+    <h2 class="section-title">Sobre Mim</h2>
+    <p class="section-subtitle">Engenharia de software com propósito</p>
+
+    <div class="sobre__grid">
+      <div class="sobre__text">
+        <p class="sobre__description">{{ profile().about }}</p>
+
+        <div class="sobre__highlights">
+          <div class="sobre__highlight glass-card">
+            <i class="ri-building-line"></i>
+            <div>
+              <strong>Clean Architecture</strong>
+              <span>Separação de responsabilidades com camadas bem definidas</span>
+            </div>
+          </div>
+
+          <div class="sobre__highlight glass-card">
+            <i class="ri-speed-line"></i>
+            <div>
+              <strong>Performance</strong>
+              <span>APIs otimizadas com Dapper, SQLKata e consultas performáticas</span>
+            </div>
+          </div>
+
+          <div class="sobre__highlight glass-card">
+            <i class="ri-shield-check-line"></i>
+            <div>
+              <strong>Boas Práticas</strong>
+              <span>SOLID, Design Patterns, TDD e código modular</span>
+            </div>
+          </div>
+
+          <div class="sobre__highlight glass-card">
+            <i class="ri-git-branch-line"></i>
+            <div>
+              <strong>Escalabilidade</strong>
+              <span>Microsserviços, Kafka, Docker e Kubernetes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sobre__info">
+        <div class="sobre__card glass-card">
+          <div class="sobre__stats">
+            <div class="sobre__stat">
+              <span class="sobre__stat-number">+5</span>
+              <span class="sobre__stat-label">Anos de Experiência</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-number">4</span>
+              <span class="sobre__stat-label">Empresas</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-number">3</span>
+              <span class="sobre__stat-label">Stacks Dominadas</span>
+            </div>
+          </div>
+
+          <div class="sobre__details">
+            <div class="sobre__detail">
+              <i class="ri-map-pin-line"></i>
+              <span>{{ profile().location }}</span>
+            </div>
+            <div class="sobre__detail">
+              <i class="ri-graduation-cap-line"></i>
+              <span>{{ profile().education }}</span>
+            </div>
+            <div class="sobre__detail">
+              <i class="ri-code-s-slash-line"></i>
+              <span>Full Stack Pleno (quase Sênior)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

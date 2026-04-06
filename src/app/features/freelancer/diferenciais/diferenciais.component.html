@@ -1,0 +1,45 @@
+<section class="diferenciais section">
+  <div class="container">
+    <div class="diferenciais__header">
+      <h1 class="section-title">Por que me escolher?</h1>
+      <p class="section-subtitle">
+        Mais do que código — entrego soluções com arquitetura sólida, performance real e visão de negócio.
+      </p>
+    </div>
+
+    <div class="diferenciais__grid">
+      @for (diff of differentials(); track diff.title; let i = $index) {
+        <div class="diferenciais__card glass-card">
+          <div class="diferenciais__card-glow" [attr.data-index]="i"></div>
+          <div class="diferenciais__icon" [attr.data-index]="i">
+            <i [class]="diff.icon"></i>
+          </div>
+          <h3 class="diferenciais__card-title">{{ diff.title }}</h3>
+          <p class="diferenciais__card-desc">{{ diff.description }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="diferenciais__promise">
+      <div class="diferenciais__promise-card glass-card">
+        <div class="diferenciais__promise-orb"></div>
+        <div class="diferenciais__promise-icon">
+          <i class="ri-shield-star-line"></i>
+        </div>
+        <h3 class="diferenciais__promise-title">Meu compromisso com você</h3>
+        <p class="diferenciais__promise-text">
+          Código limpo, comunicação transparente e entregas dentro do prazo. Trabalho com metodologias ágeis,
+          versionamento Git e documentação técnica em cada etapa do projeto.
+        </p>
+        <div class="diferenciais__promise-actions">
+          <a routerLink="/freelancer/contato" class="btn-accent">
+            <i class="ri-handshake-line"></i> Vamos Trabalhar Juntos
+          </a>
+          <a routerLink="/freelancer/projetos" class="btn-outline">
+            <i class="ri-folder-line"></i> Ver Projetos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
