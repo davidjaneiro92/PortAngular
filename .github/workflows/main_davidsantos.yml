@@ -58,6 +58,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_36A969733A4D4AB5813EBE8BEDF08EE5 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C7A23EF0F682464F996BC49BCB222FE6 }}
 
+      - name: Configure Azure App Service for SPA
+        run: |
+          az webapp config set \
+            --resource-group DSDev \
+            --name davidsantos \
+            --startup-file "pm2 serve /home/site/wwwroot --no-daemon --spa"
+
       - name: Deploy Angular SPA to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
